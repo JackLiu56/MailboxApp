@@ -14,35 +14,33 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.njit.android.emailmobileterminal.MyApplication;
 import com.njit.android.emailmobileterminal.R;
 import com.njit.android.emailmobileterminal.SendEmail;
 
 
 public class SendMailFragment extends Fragment {
-    private SendMailModel sendMailModel;
+    private SendMailViewModel sendMailViewModel;
     private static final int SUCCESS = 10000;
     private static final int FAILED = 10001;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendMailModel = ViewModelProviders.of(this).get(SendMailModel.class);
+        sendMailViewModel = ViewModelProviders.of(this).get(SendMailViewModel.class);
         View root = inflater.inflate(R.layout.fragment_send_mail, container, false);
         final EditText editTextAddresser = root.findViewById(R.id.edit_text_addresser_value);
-        sendMailModel.getEdit_text_addresser_value().observe(this, new Observer<String>() {
+        sendMailViewModel.getEdit_text_addresser_value().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 editTextAddresser.setText(s);
             }
         });
         final EditText editTextSubject = root.findViewById(R.id.edit_text_subject_value);
-        sendMailModel.getEdit_text_subject_value().observe(this, new Observer<String>() {
+        sendMailViewModel.getEdit_text_subject_value().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 editTextSubject.setText(s);
@@ -50,7 +48,7 @@ public class SendMailFragment extends Fragment {
         });
 
         final EditText editTextContent = root.findViewById(R.id.edit_text_content_value);
-        sendMailModel.getEdit_text_content_value().observe(this, new Observer<String>() {
+        sendMailViewModel.getEdit_text_content_value().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 editTextContent.setText(s);
@@ -79,7 +77,7 @@ public class SendMailFragment extends Fragment {
                         SendEmail sendEmailObject = new SendEmail(recipients,subject,mailContent,addresser,password);
                         try{
                             sendEmailObject.sendMail();
-                            sendMailModel.clearEditTextAfterSendMessage();
+                            sendMailViewModel.clearEditTextAfterSendMessage();
                             handler.sendEmptyMessage(SUCCESS);
 
                         }catch (Exception e){

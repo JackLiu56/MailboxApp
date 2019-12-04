@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendMailModel extends ViewModel {
+public class SendMailViewModel extends ViewModel {
     private MutableLiveData<String> edit_text_addresser_value;
     private MutableLiveData<String> edit_text_subject_value;
     private MutableLiveData<String> edit_text_content_value;
 
-    public SendMailModel() {
+    public SendMailViewModel() {
         edit_text_addresser_value = new MutableLiveData<>();
 //        edit_text_addresser_value.setValue("");
 
