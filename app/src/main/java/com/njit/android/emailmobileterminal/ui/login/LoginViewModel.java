@@ -16,8 +16,8 @@ public class LoginViewModel extends ViewModel {
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
     private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
     private final static String HOST_STRING = "imap.gmail.com";
-    private final static String DEFAULT_USERNAME = "zl344@njit.edu";
-    private final static String DEFAULT_PASSWORD = "4693140015Ja";
+    private static String DEFAULT_USERNAME;
+    private static String DEFAULT_PASSWORD;
 
     LiveData<LoginFormState> getLoginFormState() {
         return loginFormState;
