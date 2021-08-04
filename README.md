@@ -1,4 +1,47 @@
 <h1 align="center">Email Mobile Terminal</h1>
+Author: Ziyang Liu, Yuezhong Yan, Anil Mikkilineni, Lixing Jiang
+
+Why choose this Application?
+
+Limited functionality streamlines usages
+    -Useful for limited or private access email accounts
+    -Minimizes incorrect usages due to user error 
+    -Reduces security risks
+    -Decreases application processing
+Quick implementation
+    -Allows for rapid development and deployment 
+    -Architecture allows for reliable data transfer
+    -LiveData maintains states
+
+<h1>Usage</h1>
+Requirement: Must be a formal NJIT student with a valid NJIT email address
+
+How to set up:
+
+Step 1
+
+    Go to https://directory.njit.edu/AdvancedSearch.aspx
+    Login with your UCID and password
+    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage1.png)
+    
+Step 2
+
+    Choose “Edit My Profile”
+    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage2.png)
+    
+Step 3
+
+    Choose “E-Mail Settings”
+    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage3.png)
+
+Step 4
+
+    Set the password that to log in the App
+    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage4.png)
+    
+
+
+
 
 
 0.    Environment: Android Studio 3.5 && JDK 1.8
@@ -7,12 +50,15 @@
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture1.png)
 2.    UI
 Login page:
+
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture2.png)
 
 Fetch Mail page:
+
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture3.png)
 
 Send email:
+
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture4.png)
 
 3.    Main(not all) functionalities: Retrieve emails, Send emails
