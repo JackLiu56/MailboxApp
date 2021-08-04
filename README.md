@@ -4,59 +4,48 @@
 0.    Environment: Android Studio 3.5 && JDK 1.8
 
 1.    Architecture: MVVM: Model-View-ViewModel
- 
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture1.png)
 2.    UI
 Login page:
- 
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture2.png)
 
 Fetch Mail page:
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture3.png)
 
 Send email:
- 
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture4.png)
 
 3.    Main(not all) functionalities: Retrieve emails, Send emails
 
 Retrieve emails:
--FetchEmail: It is a model that contains related functionalities of logging in and retrieving emails.
+
+    FetchEmail: It is a model that contains related functionalities of logging in and retrieving emails.
         -FetchMailFragment: It is a ViewModel to retrieve and denote emails with list.
         -fragment_fetch_mail.xml: It is a view to retrieve emails.
 
-      Logic:
-Model is responsible to retrieve emails, and then fetches email content to ViewModel. ViewModel notifies views that “subscribe” this ViewModel to update.
+Logic:
+        Model is responsible to retrieve emails, and then fetches email content to ViewModel. ViewModel notifies views that “subscribe” this ViewModel to update.
 
 
-      Send emails:
+    Send emails:
         -SendEmail: It is a model that contains related functionalities of sending emails.
         -SendMailFragment: It is a model to send emails.
         -SendMailViewModel: It is a ViewModel to send emails.
         -fragment_send_mail.xml: It is a view to send emails.
       
-      Logic:
+Logic:
         Model is responsible for sending emails. Set email content to be null after email is sent successfully. That is, set ViewModel to be null. ViewModel notifies views that “subscribe” this ViewModel to update.
       MyApplication: Global class to store username and password.
       
-      All classes related to Login:
+All classes related to Login:
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture5.png)
            
 
-            -LoginActivity: It is a controller to login with emails.
-            -LoginFormState: Data validation state of the login form.
-            -LoginResult: Authentication result: success (user details) or error message.
-            -LoginViewModel: It is a ViewModel to login with emails
-            -LoginViewModelFactory: It is ViewModel provider factory to instantiate   LoginViewModel. Required given LoginViewModel has a non-empty constructor.
+        -LoginActivity: It is a controller to login with emails.
+        -LoginFormState: Data validation state of the login form.
+        -LoginResult: Authentication result: success (user details) or error message.
+        -LoginViewModel: It is a ViewModel to login with emails
+        -LoginViewModelFactory: It is ViewModel provider factory to instantiate   LoginViewModel. Required given LoginViewModel has a non-empty constructor.
      
      MainActivity: Proceed to this page when login success. This page also fetches FetchMailFragment and SendMailFragment. 
 
