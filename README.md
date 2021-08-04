@@ -22,22 +22,26 @@ Step 1
 
     Go to https://directory.njit.edu/AdvancedSearch.aspx
     Login with your UCID and password
-    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage1.png)
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage1.png)
     
 Step 2
 
     Choose “Edit My Profile”
-    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage2.png)
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage2.png)
     
 Step 3
 
     Choose “E-Mail Settings”
-    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage3.png)
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage3.png)
 
 Step 4
 
     Set the password that to log in the App
-    ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage4.png)
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage4.png)
     
 
 
