@@ -1,19 +1,23 @@
 <h1 align="center">Email Mobile Terminal</h1>
+
 Author: Ziyang Liu, Yuezhong Yan, Anil Mikkilineni, Lixing Jiang
 
 Why choose this Application?
 
 Limited functionality streamlines usages
+
     -Useful for limited or private access email accounts
     -Minimizes incorrect usages due to user error 
     -Reduces security risks
     -Decreases application processing
 Quick implementation
+
     -Allows for rapid development and deployment 
     -Architecture allows for reliable data transfer
     -LiveData maintains states
 
 <h1>Usage</h1>
+
 Requirement: Must be a formal NJIT student with a valid NJIT email address
 
 How to set up:
@@ -52,7 +56,9 @@ Step 4
 
 1.    Architecture: MVVM: Model-View-ViewModel
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture1.png)
+
 2.    UI
+
 Login page:
 
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture2.png)
@@ -74,6 +80,7 @@ Retrieve emails:
         -fragment_fetch_mail.xml: It is a view to retrieve emails.
 
 Logic:
+
         Model is responsible to retrieve emails, and then fetches email content to ViewModel. ViewModel notifies views that “subscribe” this ViewModel to update.
 
 
@@ -84,10 +91,12 @@ Logic:
         -fragment_send_mail.xml: It is a view to send emails.
       
 Logic:
+
         Model is responsible for sending emails. Set email content to be null after email is sent successfully. That is, set ViewModel to be null. ViewModel notifies views that “subscribe” this ViewModel to update.
       MyApplication: Global class to store username and password.
       
 All classes related to Login:
+
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Picture5.png)
            
 
@@ -99,8 +108,10 @@ All classes related to Login:
      
      MainActivity: Proceed to this page when login success. This page also fetches FetchMailFragment and SendMailFragment. 
 
-4.    Our understanding about MVVM (Correct me if I am wrong):
+4.    Our understanding about MVVM:
+
 a)    Introduction to MVVM
+
 MVVM is a software architectural pattern that helps organize code. It has 3 components: Model, View, and ViewModel. 
 
 Generally speaking, Model holds the data. View holds the formatted data, such as structure, layout, appearance, etc., and delegates everything to the Model. ViewModel links between Model and View and makes things pretty. 
@@ -108,9 +119,13 @@ Generally speaking, Model holds the data. View holds the formatted data, such as
 Reference: https://www.tutorialspoint.com/mvvm/mvvm_quick_guide.htm
 
 b)    Comparisons between MVC, MVP, and MVVM
+
 We actually have other two patterns to choose: MVC and MVP. 
+
 MVC = Model View Controller
+
 MVP = Model View Presenter
+
 Model and View in these two act similarly as in MVVM.
 
 Controller passes user’s data through the Model and passes results to View.
@@ -122,21 +137,26 @@ ViewModel exposes methods, instructions, and other properties that help maintain
 Reference: https://medium.com/@ankit.sinhal/mvc-mvp-and-mvvm-design-pattern-6e169567bbad
 
 c)    Why do we pick MVVM?
+
 Bi-directional data-binding between View and ViewModel allows automatic update of changes. Such data-binding ensures that the models and properties in the View-Model are in sync with the view.
 
 Reference: https://medium.com/@ankit.sinhal/mvc-mvp-and-mvvm-design-pattern-6e169567bbad
 
 d)    What is LiveData? (Can Skip)
+
 LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component Observers that are in an active lifecycle state.
 
 Reference: https://developer.android.com/topic/libraries/architecture/livedata#java
 
 e)    What does LiveData do here in MVVM?
+
 Generally, the source of data for LiveData is ViewModel. As data is updated, LiveData will let all of its Observers (such as Activity, Fragment, etc.) be aware of such change. However, LiveData does not “notify” all of its Observers blindly. LiveData first checks real-time states of Observers and then notifies those Observers in “active” state. If Observers are in “paused” or “destroyed” state, then they will not be notified. 
 
 Since we use LiveData, we do not need to remove subscriptions on LiveData via onPause() or onDestroy() method. In addition, Observer will re-receive the updated data from LiveData if it goes to “resumed” state.
 
-Reference: https://medium.com/androiddevelopers/livedata-beyond-the-viewmodel-reactive-patterns-using-transformations-and-mediatorlivedata-fda520ba00b7
+Reference:
+
+https://medium.com/androiddevelopers/livedata-beyond-the-viewmodel-reactive-patterns-using-transformations-and-mediatorlivedata-fda520ba00b7
 
 https://developer.android.com/topic/libraries/architecture/livedata#java
 
@@ -145,6 +165,7 @@ https://developer.android.com/reference/android/app/Activity
 https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State.html#RESUMED
 
 f)    When should we notify View to show up data?
+
 If a lifecycle becomes inactive, it receives the latest data upon becoming active again. 
 
 Imagine, without LiveData, that when a result of request has already been returned back, an app has to check if Activity or Fragment is destroyed. If not destroyed, then update UI. Otherwise do not update. Then developer implements this 
@@ -154,24 +175,27 @@ function by writing bunch of Activity.isDestoyed(). However, with LiveData, an a
 Reference: https://developer.android.com/topic/libraries/architecture/livedata#java
 
 5.    Some interface(s) and API(s) we think as important:
-a)    interface Observer: 
-package androidx.lifecycle;
 
-/**
- * A simple callback that can receive from {@link LiveData}.
- *
- * @param <T> The type of the parameter
- *
- * @see LiveData LiveData - for a usage description.
- */
-public interface Observer<T> {
-    /**
-     * Called when the data is changed.
-     * @param t  The new data
-     */
-    void onChanged(T t);
-}
+a)    interface Observer: 
+
+    package androidx.lifecycle;
+
+        /**
+        * A simple callback that can receive from {@link LiveData}.
+        *
+        * @param <T> The type of the parameter
+        *
+        * @see LiveData LiveData - for a usage description.
+        */
+        public interface Observer<T> {
+        /**
+        * Called when the data is changed.
+        * @param t  The new data
+        */
+        void onChanged(T t);
+        }
 
 b)    interface List: store emails and email messages.
+
 c)    javax.mail API: useful to send and retrieve emails.
 
