@@ -47,10 +47,43 @@ Step 4
 
 ![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage4.png)
     
+How to log in:
 
+Step 1
 
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Login1.png)
 
+    Error message may pop up, don’t worry, check the following steps.
 
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage2.png)
+
+Step 2
+
+    Enable pop/smtp and imap
+    
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage3.png)
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage4.png)
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage5.png)
+
+Step 3: Make sure dis-alarm security alert
+
+    1. Click this alert email on your gmail.com
+    
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage6.png)
+
+    2. Select the “Check activity” button
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage7.png)
+
+    3. Select the “Yes, it was me” button
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage8.png)
+
+Step 4: Set up less security block
+
+![Image text](https://github.com/JackLiu56/MailboxApp/blob/master/image/Usage9.png)
+
+<h1>Environment</h1>
 
 0.    Environment: Android Studio 3.5 && JDK 1.8
 
