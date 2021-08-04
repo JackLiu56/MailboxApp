@@ -1,4 +1,4 @@
-<h1 align="center">Email Mobile Terminal</h1>
+<h1 align="center">Mailbox App via NJIT</h1>
 
 Author: Ziyang Liu, Yuezhong Yan, Anil Mikkilineni, Lixing Jiang
 
